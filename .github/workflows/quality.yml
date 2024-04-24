@@ -1,0 +1,33 @@
+---
+name: Code Quality checks with understand
+
+on:
+    push:
+    pull_request:
+
+jobs:
+    build:
+        name: Code Quality
+        runs-on: ubuntu-latest
+
+        permissions:
+            contents: read
+            packages: read
+            statuses: write # Report results
+        
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+            
+            - name: alias stuff
+              run: alias und='scitools/bin/linux64/und'
+            
+            - name: install understand
+              run: |
+                wget latest.scitools.com/Understand/Understand-CLI-6.5.1181-Linux-64bit.tgz
+                tar -xvzf Understand-CLI-6.5.1181-Linux-64bit.tgz
+                und -setlicensecode ${{ secrets.SLACK_LICENSE }}
+            
+            - name: test
+              run: und --help
+                

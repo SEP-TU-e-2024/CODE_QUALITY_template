@@ -36,6 +36,9 @@ The code quality assessment document that TU/e uses can be found [here](https://
 
 
 ## Linter
+und: https://support.scitools.com/support/solutions/articles/70000582798-using-understand-from-the-command-line-with-und
+
+
 TU/e uses [simian](http://www.harukizaemon.com/simian/index.html/) to analyse code duplication.
 [understand](http://scitools.com/student) is used to derive all the other metrics.
 These tools are gui based and do not integrate well with Github.
