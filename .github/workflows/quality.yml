@@ -44,3 +44,7 @@ jobs:
             - name: remove license
               run: |
                 scitools/bin/linux64/und -deregisterlicensecode
+
+            - name: show metrics
+              run: |
+                cat metrics.csv
