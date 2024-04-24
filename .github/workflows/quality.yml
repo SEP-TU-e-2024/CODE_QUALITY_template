@@ -3,7 +3,11 @@ name: Code Quality checks with understand
 
 on:
     push:
+        branches:
+            - main
     pull_request:
+        branches:
+            - main
 
 jobs:
     build:
@@ -22,19 +26,16 @@ jobs:
             - name: install understand
               run: |
                 wget -nv latest.scitools.com/Understand/Understand-CLI-6.5.1181-Linux-64bit.tgz
-                tar -xvzf Understand-CLI-6.5.1181-Linux-64bit.tgz
+                tar -xzf Understand-CLI-6.5.1181-Linux-64bit.tgz
 
             - name: test und
               run: scitools/bin/linux64/und help
             
-            - name: test license
-              run: echo ${{ secrets.SLACK_LICENSE }}
-            
-            - name: set license
-              env:
-                LICENSE: ${{ secrets.SLACK_LICENSE }}
+            - name: test analyze
               run: |
-                scitools/bin/linux64/und -setlicensecode "$LICENSE"
+                scitools/bin/linux64/und add src/*
+                scitools/bin/linux64/und analyze
+                scitools/bin/linux64/und metrics
             
             - name: test
               run: scitools/bin/linux64/und help
