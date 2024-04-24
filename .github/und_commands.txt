@@ -1,0 +1,6 @@
+create -languages Python src_db.und
+add src/
+settings -metrics all
+settings -metricsOutputFile c:\metrics.csv
+analyze
+metrics

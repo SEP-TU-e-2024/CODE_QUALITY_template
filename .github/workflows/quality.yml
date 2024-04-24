@@ -31,12 +31,6 @@ jobs:
             - name: test und
               run: scitools/bin/linux64/und help
             
-            - name: test analyze
+            - name: run und commands
               run: |
-                scitools/bin/linux64/und add src/*
-                scitools/bin/linux64/und analyze
-                scitools/bin/linux64/und metrics
-            
-            - name: test
-              run: scitools/bin/linux64/und help
-                
+                scitools/bin/linux64/und .github/und_commands.txt
