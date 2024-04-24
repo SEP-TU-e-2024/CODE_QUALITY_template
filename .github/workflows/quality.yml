@@ -32,7 +32,6 @@ jobs:
             - name: test und
               run: |
                 scitools/bin/linux64/und help
-                scitools/bin/linux64/und license
             
             - name: run und commands
               env:
