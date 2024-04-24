@@ -19,15 +19,12 @@ jobs:
             - name: Checkout code
               uses: actions/checkout@v4
             
-            - name: alias stuff
-              run: alias und='scitools/bin/linux64/und'
-            
             - name: install understand
               run: |
                 wget -nv latest.scitools.com/Understand/Understand-CLI-6.5.1181-Linux-64bit.tgz
                 tar -xzf Understand-CLI-6.5.1181-Linux-64bit.tgz
-                und -setlicensecode ${{ secrets.SLACK_LICENSE }}
+                scitools/bin/linux64/und -setlicensecode ${{ secrets.SLACK_LICENSE }}
             
             - name: test
-              run: und --help
+              run: scitools/bin/linux64/und --help
                 
