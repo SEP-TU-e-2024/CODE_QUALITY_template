@@ -3,5 +3,3 @@ add src/
 settings -metrics all
 settings -metricsOutputFile metrics.csv
 analyze
-metrics
-quit
