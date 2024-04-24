@@ -24,7 +24,7 @@ jobs:
             
             - name: install understand
               run: |
-                wget latest.scitools.com/Understand/Understand-CLI-6.5.1181-Linux-64bit.tgz
+                wget -nv latest.scitools.com/Understand/Understand-CLI-6.5.1181-Linux-64bit.tgz
                 tar -xzf Understand-CLI-6.5.1181-Linux-64bit.tgz
                 und -setlicensecode ${{ secrets.SLACK_LICENSE }}
             
