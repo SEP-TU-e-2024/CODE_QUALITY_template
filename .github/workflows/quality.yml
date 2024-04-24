@@ -26,5 +26,5 @@ jobs:
                 scitools/bin/linux64/und -setlicensecode ${{ secrets.SLACK_LICENSE }}
             
             - name: test
-              run: scitools/bin/linux64/und --help
+              run: scitools/bin/linux64/und help
                 
