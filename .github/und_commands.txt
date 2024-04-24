@@ -3,7 +3,6 @@ add src/
 settings -reportOutputDirectory htmlDir
 settings -metrics all
 settings -metricsOutputFile metrics.csv
-list
 analyze
 report
 metrics
