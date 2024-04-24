@@ -5,3 +5,4 @@ settings -metrics all
 settings -metricsOutputFile c:\metrics.csv
 analyze
 metrics
+-deregisterlicensecode
