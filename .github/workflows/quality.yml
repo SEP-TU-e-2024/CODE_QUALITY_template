@@ -23,14 +23,11 @@ jobs:
         steps:
             - name: Checkout code
               uses: actions/checkout@v4
-            
-            - name: install x11
-              run: sudo apt-get install xorg openbox
 
             - name: install understand
               run: |
-                wget -nv latest.scitools.com/Understand/Understand-CLI-6.5.1181-Linux-64bit.tgz
-                tar -xzf Understand-CLI-6.5.1181-Linux-64bit.tgz
+                wget -nv http://builds.scitools.com/all_builds/b1160/Understand/Understand-CLI-6.5.1160-Linux-64bit.tgz
+                tar -xzf Understand-CLI-6.5.1160-Linux-64bit.tgz
 
             - name: setup license
               run: |
