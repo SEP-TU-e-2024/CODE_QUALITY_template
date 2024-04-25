@@ -28,12 +28,10 @@ jobs:
               run: |
                 wget -nv latest.scitools.com/Understand/Understand-CLI-6.5.1181-Linux-64bit.tgz
                 tar -xzf Understand-CLI-6.5.1181-Linux-64bit.tgz
-
-            - name: setup license
-              run: |
-                scitools/bin/linux64/und -setlicensecode ${{ secrets.UNDERSTAND_LICENSE }}
             
             - name: run und commands
+              env:
+                LICENSE: ${{ secrets.UNDERSTAND_LICENSE }}
               run: |
                 scitools/bin/linux64/und .github/und_commands.txt || true
             
