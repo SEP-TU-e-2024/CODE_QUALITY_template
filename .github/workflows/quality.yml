@@ -24,6 +24,9 @@ jobs:
             - name: Checkout code
               uses: actions/checkout@v4
             
+            - name: x11 check
+              run: dpkg -l | grep xserver-xorg-core
+
             - name: install understand
               run: |
                 wget -nv latest.scitools.com/Understand/Understand-CLI-6.5.1181-Linux-64bit.tgz
