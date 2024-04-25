@@ -41,7 +41,7 @@ jobs:
                 scitools/bin/linux64/und -deregisterlicensecode || true
             
             - name: list all files
-              run: ls -Rl
+              run: ls -l
 
             - name: show metrics
               run: |

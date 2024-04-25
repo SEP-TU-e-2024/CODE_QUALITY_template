@@ -1,8 +1,8 @@
 license
 create -languages Python src_db.und
-add src/
-settings -reportOutputDirectory htmlDir
-settings -metrics all
-settings -metricsOutputFile metrics.csv
-analyze
-metrics
+add src/ src_db.und
+settings -reportOutputDirectory htmlDir src_db.und
+settings -metrics all src_db.und
+settings -metricsOutputFile metrics.csv src_db.und
+analyze src_db.und
+metrics src_db.und
