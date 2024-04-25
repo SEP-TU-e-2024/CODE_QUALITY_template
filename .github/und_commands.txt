@@ -1,3 +1,5 @@
+-setlicensecode $LICENSE
+license
 create -languages Python src_db.und
 add src/
 settings -reportOutputDirectory htmlDir
