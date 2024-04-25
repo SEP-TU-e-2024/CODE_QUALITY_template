@@ -1,4 +1,3 @@
-license
 create -languages Python src_db.und
 add src/ src_db.und
 settings -reportOutputDirectory htmlDir src_db.und
