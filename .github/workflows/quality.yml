@@ -24,8 +24,8 @@ jobs:
             - name: Checkout code
               uses: actions/checkout@v4
             
-            - name: x11 check
-              run: dpkg -l | grep xserver-xorg-core
+            - name: install x11
+              run: apt-get install xorg openbox
 
             - name: install understand
               run: |
