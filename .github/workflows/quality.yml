@@ -41,6 +41,10 @@ jobs:
               run: |
                 scitools/bin/linux64/und -deregisterlicensecode || true
 
+            - name: show report
+              run: |
+                cat htmlDir/*
+
             - name: show metrics
               run: |
                 cat metrics.csv
