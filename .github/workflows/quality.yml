@@ -25,7 +25,7 @@ jobs:
               uses: actions/checkout@v4
             
             - name: install x11
-              run: apt-get install xorg openbox
+              run: sudo apt-get install xorg openbox
 
             - name: install understand
               run: |
