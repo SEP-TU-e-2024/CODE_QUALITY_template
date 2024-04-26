@@ -42,6 +42,37 @@ def compute_percentages(categories: dict[str, pd.DataFrame], config: dict[str, d
     
     return percentages
 
+def percentage_to_rank(percentage: float) -> int:
+    if percentage < 0.04:
+        return 2
+    if percentage < 0.06:
+        return 1
+    if percentage < 0.11:
+        return 0
+    if percentage < 0.21:
+        return -1
+    return -2
+
+def compute_ranks(percentages: dict[str, float], config: dict[str, dict]) -> dict[str, float]:
+    ranks = dict()
+
+    for key, percentage in percentages.items():
+        attrs = config[key]['attr']
+
+        for attr in attrs:
+            if attr not in ranks:
+                ranks[attr] = list()
+            
+            ranks[attr].append(percentage_to_rank(percentage))
+
+    for attr in ranks:
+        ranks[attr] = sum(ranks[attr]) / len(ranks[attr])
+    
+    return ranks
+
+def compute_grade(ranks: dict[str, float]) -> float:
+    return (sum(ranks.values()) + 10) / 2
+
 def main():
     df = pd.read_csv(METRICS_FILE)
 
@@ -53,9 +84,13 @@ def main():
     print(categories)
     percentages = compute_percentages(categories, config)
 
-    print(percentages)
+    ranks = compute_ranks(percentages, config)
 
-    
+    grade = compute_grade(ranks)
+
+    print(percentages)
+    print(ranks)
+    print(grade)
     
 if __name__ == "__main__":
     main()
