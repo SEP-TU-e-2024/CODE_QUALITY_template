@@ -8,8 +8,8 @@ Code characteristic         | Metric                               | Threshold |
 ----------------------------|--------------------------------------|-----------|----------------------
 Module size                 | SLOC                                 |  <=400    | ADT
 Class complexity            | Cyclomatic per method: average; max  |  <10; <20 | DT
-Class design                | WMC                                  |  <=20     | MRAD
-Module design               | Functions per module/file            |  <=20     | DT
+Class design (for OO)       | WMC                                  |  <=20     | MRAD
+Module design (for non OO)  | Functions per module/file            |  <=20     | MRAD
 Module internal duplication | % of duplicated SLOC inside modules  |  N/A      | RAD
 Code commenting             | % LOCM                               |  >15%     | A
 Cyclic dependencies         | # of between classes                 |  0        | MRADT

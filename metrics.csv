@@ -1,0 +1,13 @@
+Kind,Name,AvgCountLine,AvgCountLineBlank,AvgCountLineCode,AvgCountLineComment,AvgCyclomatic,CountClassBase,CountClassCoupled,CountClassCoupledModified,CountClassDerived,CountDeclClass,CountDeclExecutableUnit,CountDeclFile,CountDeclFunction,CountDeclInstanceMethod,CountDeclInstanceVariable,CountDeclMethod,CountDeclMethodAll,CountLine,CountLineBlank,CountLineCode,CountLineCodeDecl,CountLineCodeExe,CountLineComment,CountStmt,CountStmtDecl,CountStmtExe,Cyclomatic,MaxCyclomatic,MaxInheritanceTree,MaxNesting,RatioCommentToCode,SumCyclomatic,CountCCViol,CountCCViolType,CCViolDensityLine,CCViolDensityCode
+Class,"kaas.Test",2,0,2,0,1,0,0,0,0,,,,,2,1,2,2,6,1,5,4,2,0,5,4,2,,1,0,0,"0,00",2,,,,
+Function,"kaas.Test.__init__",,,,,,,,,,,,,,,,,,2,0,2,2,1,0,2,2,1,1,,,0,"0,00",,,,,
+Function,"kaas.Test.getA",,,,,,,,,,,,,,,,,,2,0,2,1,1,0,2,1,1,1,,,0,"0,00",,,,,
+Function,"kaas.main",,,,,,,,,,,,,,,,,,3,0,3,2,2,0,3,2,2,1,,,0,"0,00",,,,,
+Module File,"kaas.py",2,0,2,0,1,,,,,1,4,,3,,,,,15,4,10,6,6,1,10,6,6,2,2,,1,"0,10",5,0,0,"0,00","0,00"
+Class,"test.Bozo",2,0,2,0,1,0,1,1,0,,,,,2,1,2,2,6,1,5,4,2,0,5,4,2,,1,0,0,"0,00",2,,,,
+Function,"test.Bozo.__init__",,,,,,,,,,,,,,,,,,2,0,2,2,1,0,2,2,1,1,,,0,"0,00",,,,,
+Function,"test.Bozo.getB",,,,,,,,,,,,,,,,,,2,0,2,1,1,0,2,1,1,1,,,0,"0,00",,,,,
+Class,"test.bruh",2,0,2,0,1,0,0,0,0,,,,,2,1,2,2,8,2,6,5,3,0,6,5,3,,1,0,0,"0,00",2,,,,
+Function,"test.bruh.__init__",,,,,,,,,,,,,,,,,,2,0,2,2,1,0,2,2,1,1,,,0,"0,00",,,,,
+Function,"test.bruh.getT",,,,,,,,,,,,,,,,,,2,0,2,1,1,0,2,1,1,1,,,0,"0,00",,,,,
+Module File,"test.py",3,0,2,0,1,,,,,2,5,,4,,,,,24,7,17,11,10,0,17,11,10,1,1,,0,"0,00",5,0,0,"0,00","0,00"

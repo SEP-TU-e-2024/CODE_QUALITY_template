@@ -1,0 +1,38 @@
+{
+    "Module size": {
+        "type": "Module File",
+        "metric": "CountLineCode",
+        "threshold": ["<=", 400],
+        "attr": ["A", "D", "T"]
+    },
+    "Class complexity avg": {
+        "type": "Class",
+        "metric": "AvgCyclomatic",
+        "threshold": ["<", 10],
+        "attr": ["D", "T"]
+    },
+    "Class complexity max": {
+        "type": "Class",
+        "metric": "MaxCyclomatic",
+        "threshold": ["<", 20],
+        "attr": ["D", "T"]
+    },
+    "Class design": {
+        "type": "Class",
+        "metric": "CountDeclMethod",
+        "threshold": ["<=", 20],
+        "attr": ["M", "R", "A", "D"]
+    },
+    "Module design": {
+        "type": "Module File",
+        "metric": "CountDeclFunction",
+        "threshold": ["<=", 20],
+        "attr": ["D", "T"]
+    },
+    "Code commenting": {
+        "type": "Module File",
+        "metric": "RatioCommentToCode",
+        "threshold": [">", 0.15],
+        "attr": ["A"]
+    }
+}
