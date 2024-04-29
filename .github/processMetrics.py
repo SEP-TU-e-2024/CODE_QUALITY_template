@@ -74,8 +74,12 @@ def compute_ranks(percentages: dict[str, float], config: dict[str, dict]) -> dic
 def compute_grade(ranks: dict[str, float]) -> float:
     return (sum(ranks.values()) + 10) / 2
 
-def print_results(dictionary):
-    MAXLEN = 24
+def nice_print(dictionary):
+    MAXLEN = 30
+
+    for key, val in dictionary.items():
+        spaces = ' ' * max(0, MAXLEN - len(key))
+        print(key, spaces, val)
 
 
 def main():
@@ -90,7 +94,11 @@ def main():
     ranks = compute_ranks(percentages, config)
     grade = compute_grade(ranks)
 
-    print_results(percentages, ranks, grade)
+    print("Percentages")
+    nice_print(percentages)
+    print("Ranks")
+    nice_print(ranks)
+    print("Grade: ", grade)
     
 if __name__ == "__main__":
     main()
