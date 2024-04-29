@@ -3,6 +3,9 @@ name: Code Quality checks with understand
 run-name: ${{ github.actor }} is checking code quality
 
 on:
+    push:
+        branches:
+          - main
     pull_request:
         branches:
           - main
