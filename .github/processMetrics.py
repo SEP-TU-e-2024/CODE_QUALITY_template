@@ -4,6 +4,11 @@ import json
 METRICS_FILE = "metrics.csv"
 CONFIG_FILE = ".github/metrics_config.json"
 
+# Colors
+AQUA = '\033[96;1m'
+TABLE_COL = ('\033[37;4m', '\033[37;4;2m')
+END_COL = '\033[0m'
+
 OPERATORS = {
     "=":  lambda a, b : a == b,
     "<=": lambda a, b : a <= b,
@@ -77,9 +82,11 @@ def compute_grade(ranks: dict[str, float]) -> float:
 def nice_print(dictionary):
     MAXLEN = 30
 
+    i = 0
     for key, val in dictionary.items():
         spaces = ' ' * max(0, MAXLEN - len(key))
-        print(key, spaces, val)
+        print(TABLE_COL[i % 2], key, spaces, val, END_COL)
+        i += 1
 
 
 def main():
@@ -94,11 +101,11 @@ def main():
     ranks = compute_ranks(percentages, config)
     grade = compute_grade(ranks)
 
-    print("Percentages")
+    print(f"{AQUA}Percentages{END_COL}")
     nice_print(percentages)
-    print("Ranks")
+    print(f"{AQUA}Ranks{END_COL}")
     nice_print(ranks)
-    print("Grade: ", grade)
+    print(f"{AQUA}Grade:{END_COL} ", grade)
     
 if __name__ == "__main__":
     main()
