@@ -5,8 +5,8 @@ METRICS_FILE = "metrics.csv"
 CONFIG_FILE = ".github/metrics_config.json"
 
 # Colors
-AQUA = '\033[96;1m'
-TABLE_COL = ('\033[37;4m', '\033[37;4;2m')
+AQUA = '\033[94;1m'
+TABLE_COL = ('\033[97;4m', '\033[37;4;2m')
 END_COL = '\033[0m'
 
 OPERATORS = {
