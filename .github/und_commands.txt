@@ -4,4 +4,3 @@ settings -reportOutputDirectory htmlDir
 settings -metricsOutputFile metrics.csv
 analyze
 metrics
-quit
