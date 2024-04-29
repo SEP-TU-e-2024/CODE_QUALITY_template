@@ -49,4 +49,5 @@ jobs:
               
             - name: run metrics processing script
               run: |
+                pip3 install pandas
                 python3 .github/processMetrics.py

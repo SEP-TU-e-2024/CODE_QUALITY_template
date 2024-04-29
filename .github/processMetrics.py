@@ -73,6 +73,10 @@ def compute_ranks(percentages: dict[str, float], config: dict[str, dict]) -> dic
 def compute_grade(ranks: dict[str, float]) -> float:
     return (sum(ranks.values()) + 10) / 2
 
+def print_results(dictionary):
+    MAXLEN = 24
+
+
 def main():
     df = pd.read_csv(METRICS_FILE)
 
@@ -81,16 +85,11 @@ def main():
     with open(CONFIG_FILE, 'r') as f:
         config = json.load(f)
     
-    print(categories)
     percentages = compute_percentages(categories, config)
-
     ranks = compute_ranks(percentages, config)
-
     grade = compute_grade(ranks)
 
-    print(percentages)
-    print(ranks)
-    print(grade)
+    print_results(percentages, ranks, grade)
     
 if __name__ == "__main__":
     main()
