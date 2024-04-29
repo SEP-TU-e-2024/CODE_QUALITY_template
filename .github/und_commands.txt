@@ -1,4 +1,4 @@
-create -languages Python src_db.und
+create -languages Python C++ src_db.und
 add src/
 settings -reportOutputDirectory htmlDir
 settings -metricsOutputFile metrics.csv
