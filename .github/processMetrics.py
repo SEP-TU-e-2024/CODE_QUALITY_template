@@ -38,7 +38,8 @@ def compute_percentages(categories: dict[str, pd.DataFrame], config: dict[str, d
     percentages = dict()
 
     for key, val in config.items():
-        percentages[key] = threshold(categories[val['type']], val['metric'], val['threshold'])
+        if val['type'] in categories:
+            percentages[key] = threshold(categories[val['type']], val['metric'], val['threshold'])
     
     return percentages
 
