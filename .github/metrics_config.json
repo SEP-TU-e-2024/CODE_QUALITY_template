@@ -23,6 +23,12 @@
         "threshold": ["<=", 20],
         "attr": ["M", "R", "A", "D"]
     },
+    "Module coupling": {
+        "type": ["Class"],
+        "metric": "CountClassCoupled",
+        "threshold": ["<", 16],
+        "attr": ["M", "R"]
+    },
     "Module design": {
         "type": ["Module File", "File"],
         "metric": "CountDeclFunction",
