@@ -18,15 +18,16 @@ OPERATORS = {
 }
 
 
-def threshold(category: pd.DataFrame, metric: str, threshold: list[str, int]) -> float:
+def threshold(categories: list[pd.DataFrame], metric: str, threshold: list[str, int]) -> float:
     values = list()
-    for ind in category.index:
-        val = category[metric][ind]
+    for category in categories:
+        for ind in category.index:
+            val = category[metric][ind]
 
-        if type(val) == str:
-            val = float(val.replace(',', '.'))
-        
-        values.append(val)
+            if type(val) == str:
+                val = float(val.replace(',', '.'))
+            
+            values.append(val)
 
     if len(values) == 0:
         return 0.0
@@ -41,10 +42,9 @@ def threshold(category: pd.DataFrame, metric: str, threshold: list[str, int]) ->
 
 def compute_percentages(categories: dict[str, pd.DataFrame], config: dict[str, dict]) -> dict[str, float]:
     percentages = dict()
-
     for key, val in config.items():
-        if val['type'] in categories:
-            percentages[key] = threshold(categories[val['type']], val['metric'], val['threshold'])
+        dfs = [categories[t] for t in val['type'] if t in categories]
+        percentages[key] = threshold(dfs, val['metric'], val['threshold'])
     
     return percentages
 
@@ -93,7 +93,6 @@ def main():
     df = pd.read_csv(METRICS_FILE)
 
     categories = {c:df.loc[df.Kind == c].dropna(axis=1) for c in df.Kind.unique()}
-
     with open(CONFIG_FILE, 'r') as f:
         config = json.load(f)
     
