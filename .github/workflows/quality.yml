@@ -43,6 +43,9 @@ jobs:
             - name: update java version
               run: |
                 sudo apt install openjdk-17-jdk openjdk-17-jre
+            
+            - name: show java version
+              run: |
                 java --version
 
             - name: simian check
