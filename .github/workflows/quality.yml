@@ -26,7 +26,7 @@ jobs:
 
             - name: install understand
               run: |
-                wget -nv latest.scitools.com/Understand/Understand-CLI-6.5.1183-Linux-64bit.tgz
+                wget -nv http://builds.scitools.com/all_builds/b1183/Understand/Understand-CLI-6.5.1183-Linux-64bit.tgz
                 tar -xzf Understand-CLI-6.5.1183-Linux-64bit.tgz
             
             - name: set understand license
@@ -42,7 +42,7 @@ jobs:
 
             - name: update java version
               run: |
-                apt install openjdk-17-jdk openjdk-17-jre
+                sudo apt install openjdk-17-jdk openjdk-17-jre
                 java --version
 
             - name: simian check
