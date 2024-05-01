@@ -51,7 +51,7 @@ jobs:
 
             - name: simian check
               run: |
-              /usr/lib/jvm/java-17-openjdk-amd64/bin/java -jar .github/simian-4.0.0.jar {balanceParentheses=true, failOnDuplication=true, ignoreCharacterCase=true, ignoreCurlyBraces=true, ignoreIdentifierCase=true, ignoreModifiers=true, ignoreStringCase=true, threshold=6} "src/**" >> simian-out.txt
+                /usr/lib/jvm/java-17-openjdk-amd64/bin/java -jar .github/simian-4.0.0.jar {balanceParentheses=true, failOnDuplication=true, ignoreCharacterCase=true, ignoreCurlyBraces=true, ignoreIdentifierCase=true, ignoreModifiers=true, ignoreStringCase=true, threshold=6} "src/**" >> simian-out.txt
 
             - name: show understand metrics
               run: |
