@@ -22,3 +22,12 @@ class Bozo():
 print("Hello World!")
 print("Hello World!")
 print("Hello World!")
+
+
+# should trigger simian:
+class Bozo():
+    def __init__(self):
+        self.b = bruh()
+    
+    def getB(self):
+        return self.b

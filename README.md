@@ -41,7 +41,5 @@ und: https://support.scitools.com/support/solutions/articles/70000582798-using-u
 
 TU/e uses [simian](http://www.harukizaemon.com/simian/index.html/) to analyse code duplication.
 [understand](http://scitools.com/student) is used to derive all the other metrics.
-These tools are gui based and do not integrate well with Github.
-We will be useing [super-linter](https://github.com/super-linter/super-linter). Which combines different languague specific linters to analyse code.
 
-**Note:** check before submission that *simian* and *understand* also return positive metrics
+**Note:** understand incorrectly computes Module coupling, it only accounts for classes in the same file. 
