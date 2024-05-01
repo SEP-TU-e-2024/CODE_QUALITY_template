@@ -40,18 +40,14 @@ jobs:
               run: |
                 scitools/bin/linux64/und -deregisterlicensecode || true
 
-            - name: update java version
-              run: |
-                sudo apt install openjdk-17-jdk openjdk-17-jre
-            
-            - name: show java version
-              run: |
-                java --version
-                ls /usr/lib/jvm/
+            - uses: actions/setup-java@v4
+              with:
+                distribution: 'temurin'
+                java-version: '17'
 
             - name: simian check
               run: |
-                /usr/lib/jvm/java-17-openjdk-amd64/bin/java -jar .github/simian-4.0.0.jar {balanceParentheses=true, failOnDuplication=true, ignoreCharacterCase=true, ignoreCurlyBraces=true, ignoreIdentifierCase=true, ignoreModifiers=true, ignoreStringCase=true, threshold=6} "src/**" >> simian-out.txt
+                java -jar .github/simian-4.0.0.jar {balanceParentheses=true, failOnDuplication=true, ignoreCharacterCase=true, ignoreCurlyBraces=true, ignoreIdentifierCase=true, ignoreModifiers=true, ignoreStringCase=true, threshold=6} "src/**" >> simian-out.txt
 
             - name: show understand metrics
               run: |
