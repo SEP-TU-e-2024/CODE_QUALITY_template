@@ -44,6 +44,10 @@ jobs:
               with:
                 distribution: 'temurin'
                 java-version: '17'
+            
+            - name: check java version
+              run: |
+                java --version
 
             - name: simian check
               run: |
