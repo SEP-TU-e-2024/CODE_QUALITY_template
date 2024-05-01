@@ -53,10 +53,14 @@ jobs:
               run: |
                 java -jar .github/simian-4.0.0.jar {balanceParentheses=true, failOnDuplication=true, ignoreCharacterCase=true, ignoreCurlyBraces=true, ignoreIdentifierCase=true, ignoreModifiers=true, ignoreStringCase=true, threshold=6} "src/**" >> simian-out.txt || true
 
-            - name: show understand metrics
+            - name: show understand general metrics
               run: |
                 cat metrics.csv
             
+            - name: show understand file dependency
+              run: |
+                cat matrix.csv
+
             - name: show simian output
               run: |
                 cat simian-out.txt
