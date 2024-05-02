@@ -13,8 +13,9 @@ def parse_output(file):
             duplications[line[6]] = (int(line[1]), f1==f2)
 
     total_lines = int(lines[-2].split()[4])
+    num_files = int(lines[-2].split()[-2])
 
-    return duplications, total_lines
+    return duplications, total_lines, num_files
 
 def compute_percentages_simian(duplications, total):
     percentages = {"Internal duplication":0, "External duplication":0}

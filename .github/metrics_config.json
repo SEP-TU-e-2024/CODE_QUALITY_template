@@ -50,5 +50,10 @@
         "External duplication": {
             "attr": ["M", "R"]
         }
+    },
+    "dependencies": {
+        "Cyclic dependencies": {
+            "attr": ["M", "R", "A", "D", "T"]
+        }
     }
 }
