@@ -64,8 +64,10 @@ jobs:
             - name: show simian output
               run: |
                 cat simian-out.txt
-              
+            
+            - name: install pandas for python script
+              run: pip3 install pandas
+
             - name: run metrics processing script
               run: |
-                pip3 install pandas
                 python3 .github/processMetrics.py
