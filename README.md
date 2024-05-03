@@ -5,10 +5,10 @@
 This worklfow is run whenever a commit is pushed to main or a pr into main is made. It may take between 1 to 3 minutes to complete the analysis. To view the results do the following:
 
 Navigate to the github action and click on the job *Code Quality*:
-![alt text](docs/github-action.jpg)
+![alt text](.github/docs/github-action.jpg)
 
 The *Show output* tab shows all the metrics gathered by the tools:
-![alt text](docs/show-output.png)
+![alt text](.github/docs/show-output.png)
 
 The output starts with some intermediate debug results, which you can ignore.
 The evaluation of you code is shown in the tables below. *Threshold violation percentages* is the percentage of files/code that violate the metrics shown in the table below. *Ranks* shows the combined rank for each maintainability attribute. It shows the grade that our code would get according to the metrics that the TU/e uses.
