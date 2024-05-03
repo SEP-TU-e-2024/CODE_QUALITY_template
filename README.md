@@ -1,5 +1,18 @@
 # Code quality analysis
 
+## Usage
+
+This worklfow is run whenever a commit is pushed to main or a pr into main is made. It may take between 1 to 3 minutes to complete the analysis. To view the results do the following:
+
+Navigate to the github action and click on the job *Code Quality*:
+![alt text](docs/github-action.jpg)
+
+The *Show output* tab shows all the metrics gathered by the tools:
+
+The output starts with some intermediate debug results, which you can ignore.
+The evaluation of you code is shown in the tables below. *Threshold violation percentages* is the percentage of files/code that violate the metrics shown in the table below. *Ranks* shows the combined rank for each maintainability attribute. It shows the grade that our code would get according to the metrics that the TU/e uses.
+
+
 ## Metrics
 
 For each characteristic we compute what percentage of the code is above the threshold. Then a rank is computed for that characteristic. For each Maintainability attribute we compute the average rank (based on its corresponding code characteristics).
@@ -35,10 +48,7 @@ T    | Testability
 The code quality assessment document that TU/e uses can be found [here](https://canvas.tue.nl/courses/25283/files/folder/SEP%20Materials/Assessment%20and%20Guidelines?).
 
 
-## Linter
-und: https://support.scitools.com/support/solutions/articles/70000582798-using-understand-from-the-command-line-with-und
-
-
+## Code analysis tools
 TU/e uses [simian](http://www.harukizaemon.com/simian/index.html/) to analyse code duplication.
 [understand](http://scitools.com/student) is used to derive all the other metrics.
 

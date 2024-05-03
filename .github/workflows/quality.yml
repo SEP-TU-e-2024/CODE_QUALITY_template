@@ -68,6 +68,6 @@ jobs:
             - name: install pandas for python script
               run: pip3 install pandas
 
-            - name: run metrics processing script
+            - name: Show output
               run: |
                 python3 .github/processMetrics.py
