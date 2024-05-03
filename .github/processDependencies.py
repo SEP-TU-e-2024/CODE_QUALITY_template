@@ -20,7 +20,7 @@ def compute_percentages_dependencies(matrix, total_num_files):
 
     for i in range(num_files):
         for j in range(num_files):
-            if matrix[i][j] != 0 and matrix[j][i] != 0:
+            if matrix[i][j] != 0 and matrix[j][i] != 0 and i != j:
                 violations += 1
 
     return {"Cyclic dependencies": violations / (2 * total_num_files)}
