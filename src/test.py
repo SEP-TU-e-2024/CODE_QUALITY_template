@@ -1,2 +1,1 @@
-# bruh
 print('hello world!')

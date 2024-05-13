@@ -53,7 +53,10 @@ def nice_print(dictionary):
     i = 0
     for key, val in dictionary.items():
         spaces = ' ' * max(0, MAXLEN - len(key))
-        print(TABLE_COL[i % 2], key, spaces, val, END_COL)
+        if val > 0:
+            print(TABLE_COL[i % 2], key, spaces, RED, val, END_COL)
+        else:
+            print(TABLE_COL[i % 2], key, spaces, val, END_COL)
         i += 1
 
 
