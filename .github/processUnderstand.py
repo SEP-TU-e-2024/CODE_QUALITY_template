@@ -19,7 +19,7 @@ def threshold(categories: list, metric: str, threshold: list[str, int]) -> float
             values[name] = val
 
     if len(values) == 0:
-        return 0.0
+        return 0.0, {}
 
     violatingFiles = dict()
     violations = 0
@@ -36,6 +36,6 @@ def compute_percentages_understand(categories: dict, config: dict[str, dict]) ->
     violatingFiles = dict()
     for key, val in config.items():
         dfs = [categories[t] for t in val['type'] if t in categories]
-        print(threshold(dfs, val['metric'], val['threshold']))
+        percentages[key], violatingFiles[key] = threshold(dfs, val['metric'], val['threshold'])
     
     return percentages, violatingFiles
