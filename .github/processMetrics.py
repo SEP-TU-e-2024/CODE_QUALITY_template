@@ -13,6 +13,7 @@ CONFIG_FILE = ".github/metrics_config.json"
 # Colors
 AQUA = '\033[94;1m'
 RED = '\033[31;1m'
+BOLD = '\033[;1m'
 YELLOW = '\033[34;1m'
 TABLE_COL = ('\033[97;4m', '\033[37;4;2m')
 END_COL = '\033[0m'
@@ -100,9 +101,9 @@ def main():
         # print understand violations
         for key, files in violatingFiles_understand.items():
             if files:
-                print(f"{RED}{key}{END_COL}")
+                print(f"{BOLD}{key}{END_COL}")
                 for filename, val in files.items():
-                    print(f"{filename}\t{val}")
+                    print(f"\t{filename}\t{val}")
 
         print("\nFor code duplication stats look at the tab 'show simian output' above")
 
