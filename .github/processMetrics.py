@@ -78,7 +78,7 @@ def main():
     with open(DEPENDENCIES_FILE, 'r') as f:
         matrix = process_file(f)
 
-    percentages_understand, violatingFiles = compute_percentages_understand(categories, config_understand)
+    percentages_understand, violatingFiles_understand = compute_percentages_understand(categories, config_understand)
     percentages_simian = compute_percentages_simian(duplications, total_lines)
     percentages_dependencies = compute_percentages_dependencies(matrix, num_files)
 
@@ -92,11 +92,20 @@ def main():
     nice_print(ranks)
     print(f"{AQUA}Grade:{END_COL} ", grade)
 
-    print(violatingFiles)
 
     # Fail process
     if grade < 10:
         print(f"{RED}Code violations found!!!!!{END_COL}")
+
+        # print understand violations
+        for key, files in violatingFiles_understand.items():
+            if files:
+                print(f"{RED}{key}{END_COL}")
+                for filename, val in files.items():
+                    print(f"{filename}\t{val}")
+
+        print("\nFor code duplication stats look at the tab 'show simian output' above")
+
         exit(2)
     
 if __name__ == "__main__":
