@@ -7,6 +7,7 @@ OPERATORS = {
 }
 
 def threshold(categories: list, metric: str, threshold: list[str, int]) -> float:
+    print(categories, metric, threshold)
     values = list()
     for category in categories:
         for ind in category.index:
@@ -19,7 +20,7 @@ def threshold(categories: list, metric: str, threshold: list[str, int]) -> float
 
     if len(values) == 0:
         return 0.0
-    print(metric, values)
+
     violations = 0
     op, t = threshold
     for val in values:
