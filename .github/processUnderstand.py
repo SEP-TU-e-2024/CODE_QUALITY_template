@@ -14,7 +14,7 @@ def threshold(categories: list, metric: str, threshold: list[str, int]) -> float
         for ind in category.index:
             print(ind)
             val = category[metric][ind]
-            name = categories["Name"][ind]
+            name = category["Name"][ind]
 
             if type(val) == str:
                 val = float(val.replace(',', '.'))
