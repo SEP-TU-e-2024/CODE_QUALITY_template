@@ -103,7 +103,7 @@ def main():
             if files:
                 print(f"{BOLD}{key}{END_COL}")
                 for filename, val in files.items():
-                    print(f"\t{filename}\t{val}")
+                    print(f"\t{filename}\t\t{val}")
 
         print("\nFor code duplication stats look at the tab 'show simian output' above")
 
