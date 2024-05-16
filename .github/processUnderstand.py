@@ -10,7 +10,9 @@ def threshold(categories: list, metric: str, threshold: list[str, int]) -> float
     print(categories, metric, threshold)
     values = list()
     for category in categories:
+        print(category)
         for ind in category.index:
+            print(ind)
             val = category[metric][ind]
 
             if type(val) == str:
