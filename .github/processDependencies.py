@@ -6,8 +6,13 @@ def process_file(file):
     df = pd.read_csv(file)
     cols = list(df.columns)
 
-    df = df.drop([index for index, row in df.iterrows() if row['Dependent File'] not in cols])
-    df = df[[col for col in df.columns if (col == df["Dependent File"]).any()]].dropna(how='all')
+    #df = df.drop([index for index, row in df.iterrows() if row['Dependent File'] not in cols])
+    df = df[[col for col in df.columns if (col == df["Dependent File"]).any()]]
+
+    print(df)
+
+    df = df.dropna()
+
 
     print('\nCyclic dependencies:\n', df)
 
