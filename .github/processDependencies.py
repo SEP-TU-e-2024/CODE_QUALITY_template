@@ -4,19 +4,15 @@ import numpy as np
 # return a matrix
 def process_file(file):
     df = pd.read_csv(file)
-    cols = list(df.columns)
 
-    #df = df.drop([index for index, row in df.iterrows() if row['Dependent File'] not in cols])
+    non_dep_files = list(df)[1:]
+
+    df = df.drop([index for index, row in df.iterrows() if row['Dependent File'] not in non_dep_files])
     df = df[[col for col in df.columns if (col == df["Dependent File"]).any()]]
 
     print(df)
 
-    df = df.dropna()
-
-
-    print('\nCyclic dependencies:\n', df)
-
-    return np.nan_to_num(df.to_numpy(), nan=0), list(df.columns)
+    return df.fillna(0).to_numpy(dtype=int), list(df.columns)
 
 
 def compute_percentages_dependencies(matrix, columns, total_num_files):
